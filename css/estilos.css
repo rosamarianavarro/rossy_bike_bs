@@ -1,0 +1,139 @@
+/*    Estilos para el header   */
+
+.nav-logo{
+    width:40px;
+}
+
+.nombre-empresa{
+    font-size: 60%;
+}
+
+nav i{
+    color:white;
+}
+
+nav .nav-link:hover{
+    border-bottom: 1px solid white;
+}
+
+/*   Estilos para la seccion con la imagen   */
+
+#imagen{
+    background-image: url(../img/alquiler-bicicletas-malaga.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 400px
+}
+
+.transparente{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0.3;
+}
+
+#imagen h1{
+    font-size: 5em;
+    font-weight: 300;
+}
+
+/*    Estilos para la tabla de estaciones    */
+
+
+#estaciones table i{
+    margin-right: 5px;
+}
+
+#estaciones table a{
+    color: black;
+}
+
+#estaciones table tr:nth-child(2n){
+    background-color: lightgray;
+}
+
+/*    Estilos para la seccion de rutas    */
+
+#rutas{
+    background-color: lightgray;
+}
+
+
+/*    Estilos para el footer    */
+
+footer ul{
+    padding: 0;
+}
+
+footer ul li{
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-logo{
+    width:40px;
+}
+
+.social{
+    border-top: 1px solid grey;
+}
+
+.social i{
+    font-size: 2em;
+}
+
+.social a{
+    color: inherit;
+}
+
+.social a:hover{
+    color: #428bca;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
