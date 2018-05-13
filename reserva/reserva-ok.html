@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ByRossyBike Reserva OK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+
+    <!--Iconos -->
+    <link rel="stylesheet" href="../css/fontawesome/css/fontawesome-all.css">
+
+    <!--Bootstrap css-->
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!--Nuestros opropios estilos css-->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar 
+           navbar-expand-lg 
+           py-0 
+           bg-primary
+           text-white">
+            <div class="container text-center">
+                <a href="../index.html" class="navbar-brand">
+                    <img class="nav-logo"
+                    src="../img/logo-negativo.bythebike.png" 
+                    alt="Logo de ByRossyBike">
+                    <p class="nombre-empresa text-white mb-0 pt-1">ByRossyBike</p>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-caja" aria-controls="navbar-caja">
+                   <i class="fas fa-bars"></i>   
+                </button>
+                <div id="navbar-caja" class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mb-0 mr-2">
+                            <a href="../index.html" class="nav-link text-white">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Málaga
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="index.html?ciudad=malaga">Màlaga</a>
+                                <a class="dropdown-item" href="index.html?ciudad=sevilla">Sevilla</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="index.html?ciudad=barcelona">Barcelona</a>
+                                <a class="dropdown-item" href="index.html?ciudad=bilbao">Bilbao</a>
+                                <a class="dropdown-item" href="index.html?ciudad=madrid">Madrid</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mb-0 mr-2">
+                            <a href="../bicicletas/index.html#rutas" class="nav-link text-white">
+                                Rutas
+                            </a>
+                        </li>
+                        <li class="nav-item mb-0 mr-2">
+                            <a href="#modal-contacto" class="nav-link text-white" data-toggle="modal">
+                                Contacto
+                            </a>
+                        </li>
+                        <li class="nav-item mb-0 mr-2 bg-danger">
+                            <a href="#modal-login" class="nav-link text-white" data-toggle="modal">
+                                Login
+                            </a>
+                        </li>
+                        <li class="nav-item mb-0 mr-2">
+                            <a href="#modal-registro" class="nav-link text-white" data-toggle="modal">
+                                Registrarse
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- #navbar-caja -->
+            </div>
+            <!-- container-->
+        </nav>
+        
+        <div id="modal-contacto" class="modal fade" role="dialog" aria-hidden="true">
+           <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header mb-4 bg-primary text-white">
+                  <h1 class="modal-title ">
+                      Contacto
+                  </h1>
+                </div><!--modal-header-->
+                <div class="modal-body">
+                       
+                    <form class="validar-formulario" novalidate>
+                        <div class="form-row">
+                           
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Nombre"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Nombre</div>
+                            </div><!--col-->
+                            
+                             <div class="col-md-12 mb-3">
+                                <input 
+                                type="email" 
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="Correo Electrónico"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Email</div>
+                            </div><!--col-->      
+                                                 
+                             <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="asunto"
+                                name="asunto"
+                                placeholder="Asunto"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica un Asunto</div>
+                            </div><!--col-->                           
+                            
+                             <div class="col-md-12 mb-3">
+                                <textarea 
+                                name="mensaje" 
+                                id="mensaje" 
+                                class="form-control"
+                                placeholder="Mensaje"    
+                                ></textarea>
+                                
+                            </div><!--col-->                           
+                            
+                        </div><!--form-row-->
+                        <button class="btn btn-lg btn-block btn-warning" type="submit" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-lg btn-block btn-success" type="submit">Enviar</button>                        
+                    </form>
+
+                </div><!--modal-body-->    
+            </div><!-- modal-content -->
+           </div><!--modal-dialog-->   
+        </div><!--modal-contacto-->
+        
+        <div id="modal-login" class="modal fade" role="dialog" aria-hidden="true">
+           <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header mb-4 bg-primary text-white">
+                  <h1 class="modal-title ">
+                      Login
+                  </h1>
+                </div><!--modal-header-->
+                <div class="modal-body">
+                   <button class="btn text-white btn-lg btn-block mb-md-3 mb-3 rmn-facebook">
+                       Acceder con Facebook
+                   </button>
+                    <p class="text-center">
+                        o accede con correo electrónico y contraseña.
+                    </p>
+                    <form class="validar-formulario" novalidate>
+                       <div class="form-row">
+                               <div class="col-md-12 mb-3">
+                                <input 
+                                type="email" 
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="Correo Electrónico"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Email</div>
+                            </div><!--col-->   
+                            
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="password" 
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="Contraseña"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Contraseña</div>
+                            </div><!--col-->                            
+                                                     
+                                                                                                       
+                       </div>
+                        <button class="btn btn-lg btn-block btn-warning" type="submit" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-lg btn-block btn-success" type="submit">Iniciar sesión</button>                  
+                    </form>
+                    <p class="text-center">
+                        ¿No tienes una cuenta todavia?<br>
+                        <a href="#" data-toggle="modal" data-target="#modal-registro" data-dismiss="modal">Regístrate Aquí</a>
+                    </p>
+                </div><!--modal-body-->  
+              </div><!--modal-content-->
+
+           </div><!--modal-dialog-->
+
+        </div><!--modal-login-->
+        
+        
+        <div id="modal-registro" class="modal fade" role="dialog" aria-hidden="true">
+           <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header mb-4 bg-primary text-white">
+                  <h1 class="modal-title ">
+                      Únete a ByRossyBike
+                  </h1>
+                </div><!--modal-header-->
+                <div class="modal-body">
+                    <p class="text-center">
+                        ¿Tienes una cuenta?<br>
+                        <a href="#" data-toggle="modal" data-target="#modal-login" data-dismiss="modal">Accede Aquí</a>
+                    </p>                 
+                  
+                   <button class="btn text-white btn-lg btn-block mb-md-3 mb-3 rmn-facebook">
+                       Regístrate usando Facebook
+                   </button>
+                    <p class="text-center">
+                        o rellena los siguientes campos.
+                    </p>
+                    <form class="validar-formulario" novalidate>
+                       <div class="form-row">
+                           
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Nombre"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Nombre</div>
+                            </div><!--col-->
+                                                           
+
+                               <div class="col-md-12 mb-3">
+                                <input 
+                                type="email" 
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="Correo Electrónico"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Email</div>
+                            </div><!--col-->   
+                            
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="password" 
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="Contraseña"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Contraseña</div>
+                            </div><!--col-->                            
+                                                     
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="password" 
+                                class="form-control"
+                                id="rpassword"
+                                name="rpassword"
+                                placeholder="Repíte la Contraseña"
+                                required
+                                >
+                                <div class="valid-feedback">Gracias</div>
+                                <div class="invalid-feedback">Indica tu Contraseña</div>
+                            </div><!--col-->                                                                                                          
+                       </div>
+                        <button class="btn btn-lg btn-block btn-warning" type="submit" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-lg btn-block btn-success" type="submit">Iniciar sesión</button>                  
+                    </form>
+
+                </div><!--modal-body-->  
+              </div><!--modal-content-->
+
+           </div><!--modal-dialog-->
+
+        </div><!--modal-login-->        
+    </header>
+    
+    <section id="reserva-ok mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                        <h2 class="mt-5">Reserva realizada con éxito</h2>
+                        <h5 class="mb-5"><strong>Casandra ya tienes disponible tu bicicleta</strong></h5>
+                        <p class="mb-5">
+                           Acerca el siguiente código al lector para liberar tu bicicleta
+                        </p>
+                        <img src="../img/qr.png" id="qr-code" alt="QR Code">
+                        <p>o</p>
+                        <p class="mb-5">
+                            Introduce el localizador 
+                            <span class="text-danger"><u>dF78SR</u></span> 
+                            en la base del parking de bicicletas
+                        </p>                       
+                        <div class="card text-center mb-2">
+                          
+                          
+                           <div id="map-container" class="z-depth-1"></div>
+                          
+                               
+                           <div class="card-header text-white bg-primary" role="note">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Retirada Hilera, 29
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fas fa-clock"></i>
+                                        4 min en llegar
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fas fa-street-view"></i>
+                                        213 m
+                                    </div>
+                                </div><!-- row -->
+                            </div><!-- card-header -->
+                            <div class="card-body" role="note">
+                                &#42;<em>Recuerda que tienes <strong>8 minutos</strong> 
+                                para recoger tu bicicleta. Si no llegas a tiempo tu reserva 
+                                se cancelará automaticamente.</em>
+                            </div><!-- card-body -->
+                        </div><!-- card -->
+                </div><!-- col -->
+            </div>
+        </div>
+    </section>
+        
+ 
+
+   <footer>
+        <div class="container-fluid">
+            <div class="row pt-2 pb-2 bg-dark text-white">
+                <div class="col-md-3 text-center">
+                    <ul>
+                        <li class="lead text-primary">ByRossyBike</li>
+                        <li>
+                            <a href="#">
+                                Quienes somos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Rutas
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Ayuda
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center">
+                   <ul>
+                        <li class="lead text-primary">Ciudades</li>
+                        <li>
+                            <a href="#">
+                                Málaga
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Madrid
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Barcelona
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Bilbao
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Sevilla
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center">
+                   <ul>
+                        <li class="lead text-primary">Usuarios</li>
+                        <li>
+                            <a href="#">
+                                Iniciar Sesión
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Registro
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Incidencia
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center">
+                   <ul>
+                        <li class="lead text-primary">Políticas de Uso</li>
+                        <li>
+                            <a href="#">
+                                Condiciones de Servicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Aviso Legal
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Política de Privacidad
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="#">
+                                Cookies
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- row -->
+            <div class="row social bg-dark text-white text-center pt-2 pb-2">
+                <div class="col-md-4 text-center text-md-left pb-md-1 pb-3">
+                   <a href="../index.html">
+                    <img class="footer-logo mr-2" src="../img/logo-negativo.bythebike.png" alt="logo">
+                    ByRossyBike
+                    </a>
+                </div>
+                <div class="col-md-4 text-center text-md-center pb-md-1 pb-3">
+                    Alquiler de Bicicletas en tu Ciudad
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <a href="#" target="_blank"><i class="fab fa-facebook mr-5 mr-md-3"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter mr-5 mr-md-3"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram mr-5 mr-md-3"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin mr-0 mr-md-3"></i></a>
+                </div>
+            </div>
+        </div><!-- container -->
+    </footer>
+
+
+    <!-- importamos jquery -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+
+    <!-- importamos popper -->
+    <script src="../js/popper.min.js"></script>
+
+    <!-- importamos bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    
+  <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('validar-formulario');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script> 
+   
+   <script>
+        
+        function initMap() {
+            var var_location = new google.maps.LatLng(36.719551, -4.434383);
+
+            var var_mapoptions = {
+                center: var_location,
+                zoom: 18
+            };
+
+            var var_map = new google.maps.Map(document.getElementById("map-container"),
+                var_mapoptions);
+
+            var var_marker = new google.maps.Marker({
+                position: var_location,
+                map: var_map,
+                title: "Hilera 29"
+            });
+        }
+    </script>   
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrj8D_l23M7fnAXXghB0J7Y8Dj0Yvfk8M&callback=initMap">
+    </script>             
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
