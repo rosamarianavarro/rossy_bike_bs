@@ -142,8 +142,15 @@ footer a:hover{
     height: 300px    
 }
 
+.card-img-top{
+    max-width: 348px;
+    max-height: 220px;
+    width: 348px;
+    height: 220px;
+    overflow: hidden;
 
 
+}
 
 
 

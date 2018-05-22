@@ -16,6 +16,108 @@
     <!--Nuestros opropios estilos css-->
     <link rel="stylesheet" href="../css/estilos.css">
 
+    <script>
+    
+    //Definimos la clase Ruta   
+        
+    function Ruta(titulo,src,distancia,duracion,dificultad){
+        this.titulo = titulo;
+        this.src = src;
+        this.distancia = distancia;
+        this.duracion = duracion;
+        this.dificultad = dificultad;
+    }//De la clase Ruta
+    
+    var rutasArray = new Array();
+
+    rutasArray[0] = new Ruta("Ruta por los Montes de Málaga","../img/ruta-montes-de-malaga.jpg",40,4,"Difícil");
+    rutasArray[1] = new Ruta("Senda Litoral de la Costa del Sol","../img/senda-litoral-mijas-malaga.jpg",25,3,"Media");
+    rutasArray[2] = new Ruta("Ruta por la Ciudad de Málaga","../img/ruta-malaga-bicicleta.jpg",17,2,"Fácil");
+
+
+    function añadirRuta(){
+    
+        var nuevoTitulo = document.forms.frmAnadirRuta.titulo.value;
+        var nuevoSrc = document.forms.frmAnadirRuta.src.value;
+        var nuevaDistancia = parseInt(document.forms.frmAnadirRuta.distancia.value);
+        var nuevaDuracion = parseInt(document.forms.frmAnadirRuta.duracion.value);
+        var nuevaDificultad = document.forms.frmAnadirRuta.dificultad.value;
+        
+        var rutaPorAnadir = new Ruta(nuevoTitulo, nuevoSrc, nuevaDistancia, nuevaDuracion, nuevaDificultad);
+        
+        
+        console.log(rutaPorAnadir);
+        rutasArray.push(rutaPorAnadir);
+
+        muestraRutas();
+    } 
+        
+    function muestraRutas(){
+        
+        var loQueDibujamos = "";
+    
+         loQueDibujamos += '<div class="row text-center">';
+                
+            if(rutasArray.length === 0){
+               
+              loQueDibujamos += '<div class="col-4 mx-auto"><p>No hay rutas disponibles.</p></div>';   
+               }    
+                
+               
+                
+            for(var i = 0; i< rutasArray.length;i++){
+                
+                //cada tarjeta tendra el width de una columna de col-4
+                loQueDibujamos += '<div class="col-4 mx-auto">';
+                
+                    //abrimos una nueva tarjeta
+                    loQueDibujamos += '<div class="card text-center mb-5 mb-sm-2">';
+                
+                    //mostramos la img de la ruta
+                   loQueDibujamos += '<img src="' + rutasArray[i].src + '" alt="' + rutasArray[i].titulo + '" class="card-img-top">';
+                
+                    //ahora mostramos el card header con los detalles de la ruta
+                
+                    //abrimos el card header
+                    loQueDibujamos += '<div class="card-header bg-primary text-white">';
+                
+                    //creamos una nueva fila
+                    loQueDibujamos += '<div class="row">';
+
+                   //
+                    loQueDibujamos += '<div class="col-4"><i class="fas fa-street-view"></i> ' + rutasArray[i].distancia + ' Km</div><!-- col -->';
+                    loQueDibujamos += '<div class="col-4"><i class="fas fa-clock"></i> ' + rutasArray[i].duracion + ' hs</div><!-- col -->';
+                    loQueDibujamos += '<div class="col-4"><i class="fas fa-star"></i> ' + rutasArray[i].dificultad + ' </div><!-- col -->';
+                
+                    //cerramos la fila
+                    loQueDibujamos += '</div><!-- row-->';                
+                
+                    //cerramos el card header
+                    loQueDibujamos += '</div><!-- card-header-->';
+                
+                    //mostramos el titulo de la ruta
+                    loQueDibujamos += '<div class="card-body"><h3 class="card-title">' + rutasArray[i].titulo + '</h3>';
+                
+                    loQueDibujamos += '<button class="btn btn-danger">Quiero hacerla</button>';
+                
+                    loQueDibujamos += '</div><!--card-body-->';
+                
+                
+                    //cerramos la tarjeta
+                    loQueDibujamos += '</div><!-- card-->';
+                
+
+                   
+                loQueDibujamos += '</div><!-- col -->';
+            } //for   
+            loQueDibujamos += '</div><!-- row-->';    
+    
+    
+    document.getElementById("app").innerHTML = loQueDibujamos;
+    }    //muestraRutas
+        
+        
+    </script>
 
 </head>
 
@@ -421,115 +523,90 @@
                 <!-- col-->
             </div>
             <!-- row-->
-            <div class="row">
-                <div class="card-deck mb-4 mx-4 mx-sm auto">
-
-
-                    <div class="card text-center mb-5 mb-sm-2">
-                        <img src="../img/ruta-montes-de-malaga.jpg" alt="Ruta en los Montes de Málaga" class="card-img-top">
-                        <div class="card-header bg-primary text-white">
-                            <div class="row">
-                                <div class="col-4">
-                                    <i class="fas fa-street-view"></i> 40 Km
-                                </div>
-                                <!-- col -->
-                                <div class="col-4">
-                                    <i class="fas fa-clock"></i> 4 hs
-                                </div>
-                                <!-- col -->
-                                <div class="col-4">
-                                    <i class="fas fa-star"></i> Difícil
-                                </div>
-                                <!-- col -->
-                            </div>
-                            <!-- row-->
-                        </div>
-                        <!-- card-header-->
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                Ruta por los Montes de Málaga
-                            </h3>
-                            <button class="btn btn-danger">
-                                Quiero hacerla
-                            </button>
-                        </div>
-                        <!--card-body-->
-                    </div>
-                    <!-- card-->
-
-
-                    <div class="card text-center mb-5 mb-sm-2">
-                        <img src="../img/senda-litoral-mijas-malaga.jpg" alt="Senda Litoral de la Costa del Sol" class="card-img-top">
-                        <div class="card-header bg-primary text-white">
-                            <div class="row">
-                                <div class="col-4">
-                                    <i class="fas fa-street-view"></i> 25 Km
-                                </div>
-                                <!-- col -->
-                                <div class="col-4">
-                                    <i class="fas fa-clock"></i>3 hs
-                                </div>
-                                <!-- col -->
-                                <div class="col-4">
-                                    <i class="fas fa-star"></i> Media
-                                </div>
-                                <!-- col -->
-                            </div>
-                            <!-- row-->
-                        </div>
-                        <!-- card-header-->
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                Senda Litoral de la Costa del Sol
-                            </h3>
-                            <button class="btn btn-danger">
-                                Quiero hacerla
-                            </button>
-                        </div>
-                        <!--card-body-->
-                    </div>
-                    <!-- card-->
-
-
-                    <div class="card text-center mb-5 mb-sm-2">
-                        <img src="../img/ruta-malaga-bicicleta.jpg" alt="Ruta por la Ciudad de Málaga" class="card-img-top">
-                        <div class="card-header bg-primary text-white">
-                            <div class="row">
-                                <div class="col-4">
-                                    <i class="fas fa-street-view"></i> 17 Km
-                                </div>
-                                <!-- col -->
-                                <div class="col-4">
-                                    <i class="fas fa-clock"></i> 2 hs
-                                </div>
-                                <!-- col -->
-                                <div class="col-4">
-                                    <i class="fas fa-star"></i> Fácil
-                                </div>
-                                <!-- col -->
-                            </div>
-                            <!-- row-->
-                        </div>
-                        <!-- card-header-->
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                Ruta por la Ciudad de Málaga
-                            </h3>
-                            <button class="btn btn-danger">
-                                Quiero hacerla
-                            </button>
-                        </div>
-                        <!--card-body-->
-                    </div>
-                    <!-- card-->
-                </div>
-                <!-- card-deck -->
-            </div>
-            <!-- row-->
+            
+            <div id="app"></div>
+            <script>muestraRutas();</script>
         </div>
         <!-- container-->
     </section>
     <!-- rutas-->
+    
+    
+    <section id="crear-ruta" class="mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="mt-3 mb-3 mt-md-5 mb-md-5">
+                       Más Rutas
+                    </h2>
+
+                    <form name="frmAnadirRuta">
+                        <div class="form-row">
+                           
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="titulo"
+                                name="titulo"
+                                placeholder="Titulo de la ruta"
+                                required
+                                >
+                            </div><!--col-->
+                            
+                             <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="src"
+                                name="src"
+                                placeholder="Enlace absoluto a la foto de la ruta"
+                                required
+                                >
+                            </div><!--col-->      
+                                                 
+                      
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="distancia"
+                                name="distancia"
+                                placeholder="Distancia"
+                                required
+                                >
+                            </div><!--col-->
+                            
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="duracion"
+                                name="duracion"
+                                placeholder="Duración"
+                                required
+                                >
+                            </div><!--col-->
+                                                                                                               
+                            <div class="col-md-12 mb-3">
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="dificultad"
+                                name="dificultad"
+                                placeholder="Dificultad"
+                                required
+                                >
+                            </div><!--col-->
+                                                                                                                
+                        </div><!--form-row-->
+                        <button class="btn btn-lg btn-block btn-success" type="button" onclick="añadirRuta()">Añadir ruta</button>                        
+                    </form>                     
+                </div>
+                <!-- col-->
+            </div>  <!-- row--> 
+        </div> <!-- container-->
+    </section>
 
     <footer>
         <div class="container-fluid">
